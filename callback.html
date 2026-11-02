@@ -1,0 +1,11 @@
+<!doctype html><meta charset="utf-8"><title>Callback</title>
+<body style="font-family:sans-serif;padding:2em">
+<h2>Authorization code</h2>
+<p>Copy this code and send it back to your assistant (expires in a few minutes):</p>
+<textarea id="c" rows="4" cols="80" readonly></textarea>
+<p id="s"></p>
+<script>
+const p=new URLSearchParams(location.search);
+document.getElementById('c').value=p.get('code')||('(no code) '+(p.get('error')||''));
+document.getElementById('s').textContent='state: '+(p.get('state')||'');
+</script></body>
